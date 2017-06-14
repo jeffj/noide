@@ -4,6 +4,10 @@ module.exports = {
   method: 'GET',
   path: '/',
   config: {
+    state: {
+      parse: false, // parse and store in request.state
+      failAction: 'ignore' // may also be 'ignore' or 'log'
+    },
     handler: function (request, reply) {
       var cwd = process.cwd()
       var lastSep = cwd.lastIndexOf(path.sep)
